@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regular</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/vinegar.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+</head>
+<style>
+     img{
+        max-width: 70%;
+    }
+
+    .overlay .text{
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 65%;
+        height: 80%;
+        background: rgba(0, 0, 0, 0.6);
+        color: #fff;
+        padding: 5rem;
+        transition: all 0.4s ease-in-out 0s;
+    }
+
+    .overlay:hover .text,
+    .overlay.active .text {
+        opacity: 1;
+    }
+
+    .overlay .text {
+        text-align: justify;
+        font-size: 10px;
+        display: inline-block;
+        position: absolute;
+        top: 60%;
+        left: 36%;
+        transform: translate(-50%, -50%);
+        padding: 5rem;
+    }
+
+    .overlay .image {
+        display: block;
+    }
+
+    .pagination {
+        border: hidden;
+        padding-left: 120rem;
+    }
+</style>
+
+<body>
+    <div class="container-fluid">
+
+        <nav class="navbar navbar-fixed-top" role="navigation">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+
+
+                <a href="Vinegar_homepage.html"><img style="width: 12%;" src="images/logo5.png" alt="" srcset=""></a>
+
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="Vinegar_homepage.html">HOME</a></li>
+                    <li><a href="Vinegar_about.html">ABOUT US</a></li>
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">MEALS</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="regular.html">Regular</a></li>
+                            <li><a href="Lunch.html">Lunch</a></li>
+                            <li><a href="snacks.html">Snacks</a></li>
+                            <li><a href="desert.html">Desert</a></li>
+                            <li><a href="beverage.html">Beverages</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="gallery.html">GALLERY</a></li>
+                    <li><a href="Awards.html">AWARDS</a></li>
+                    <li><a href="Vinegar_catering.html">CATERING</a></li>
+                    <li><a href="Vinegar_recipe.html">RECIPE OF THE MONTH</a></li>
+                    <li><a href="mailto:abc@gmail.com">CONTACT US</a></li>
+                    <li><a href="#">FEEDBACK</a></li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </nav>
+
+
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-md-12 c1">
+                    <h1>REGULAR</h1>
+                </div>
+
+                <div class="col-sm-6 col-md-4" class="food">
+                    <h2>Beer in Belgium</h2>
+                    <img src="images/beer.jpg" alt="" class="image">
+                    <div class="overlay">
+                        <div class="text">
+                            Okay, so beer isn’t a food. But if you’ve been to Belgium, you’ll know that beer is
+                            practically a meal here. In a country with over 150 different breweries, Belgium is spoiled
+                            for choice in types of beer. You can have it in Vinegar.
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4" class="food">
+                    <h2>Haggis</h2>
+                    <img src="images/haggis.jpg" alt="" class="image">
+                    <div class="overlay">
+                        <div class="text">
+                            Sheep’s stomach stuffed with oats and other spices? Don’t let the description scare you —you
+                            just might be surprised how tasty it actually is! In Edinburgh, you can even get haggis
+                            burgers! And if you don’t care for stuffed sheep stomach, there’s always deep-fried
+                            EVERYTHING in Vinegar.
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4" class="food">
+                    <h2>Stew in Ireland</h2>
+                    <img src="images/stew.jpg" alt="" class="image">
+                    <div class="overlay">
+                        <div class="text">
+                            Maybe it’s the famously blustery Irish weather, but there’s little better than a good Irish
+                            stew on a wet day in Vinegar. (And really – most days are wet!) Traditionally made from
+                            lamb, this stew is best when it comes with a Guinness.
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4" class="food">
+                    <h2>Pierogi</h2>
+                    <img src="images/pierogi.jpg" alt="" class="image">
+                    <div class="overlay">
+                        <div class="text">
+                            It seems every culture in the world has some sort of dumplings dish and in Poland, it’s
+                            called a pierogi. Most traditionally they’re baked or fired in butter with onions—and almost
+                            always served with sauerkraut! They can be vegetarian (in Poland, that means potatoes) or
+                            with ground meat. Vinegar is dedicated to pierogi!
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4" class="food">
+                    <h2>Pierogi in Poland</h2>
+                    <img src="images/pierogi.jpg" alt="" class="image">
+                    <div class="overlay">
+                        <div class="text">
+                            Many believe that Poland’s rib-stickingly good national dish has its roots in the Far East.
+                            A version of Chinese dumplings brought back to Europe, via Italy, by Marco Polo in the
+                            thirteenth century. Others think the Tatars brought pierogi west from the former Russian
+                            Empire. And now, Pierogi has been occured in Vinegar's Kitchen.
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4" class="food">
+                    <h2>Banitsa in Bulgaria </h2>
+                    <img src="images/goulash.jpg" alt="" class="image">
+                    <div class="overlay">
+                        <div class="text">
+                            The best of Bulgarian food lies in its Banitsa (Баница), a mixture of eggs, Bulgarian feta
+                            cheese and filo pastry baked in an oven. Served as a breakfast food, it can be eaten hot or
+                            cold, but it’s delicious at any time of day. Banitsa with spinach (spanachena banitsa), milk
+                            (mlechna banitsa) or pumpkin (tikvenik/Тиквеник) are all excellent choices in Vinegar's
+                            menu.
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <ul class="pagination">
+            <li><a href="regular.html">1</a></li>
+            <li><a href="regular2.html">2</a></li>
+        </ul>
+
+        <div class="footer-dark">
+            <footer>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-6 col-md-3 item">
+                            <h3>Home</h3>
+                            <ul>
+                                <li><a href="#">About us</a></li>
+                                <li><a href="#">Gallery</a></li>
+                                <li><a href="#">Awards</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-6 col-md-3 item">
+                            <h3>Meals</h3>
+                            <ul>
+                                <li><a href="#">Company</a></li>
+                                <li><a href="#">Team</a></li>
+                                <li><a href="#">Careers</a></li>
+                            </ul>
+                        </div>
+                        <div class="col item social"><a href="#"><i class="icon ion-social-facebook"></i></a><a
+                                href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i
+                                    class="icon ion-social-snapchat"></i></a><a href="#"><i
+                                    class="icon ion-social-instagram"></i></a></div>
+                    </div>
+                    <p class="copyright">JADONS LTD © 2018 © 2018</p>
+                </div>
+            </footer>
+        </div>
+</body>
+
+</html>
