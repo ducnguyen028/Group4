@@ -23,7 +23,7 @@ eProject documentation at https://github.com/haruyuki7121994/rhythm.github.io/tr
 
 ============================
 
-eProject published at https://haruyuki7121994.github.io/rhythm.github.io/
+eProject published at https://ducnguyen028.github.io/Group4/Vinegar_homepage.html
 
 ============================
 
