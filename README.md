@@ -12,11 +12,12 @@ Project title: Vinegar Restaurant
 
 3 collaborators:
 
-             Pham Dang Khoa (haruyuki7121994@gmail.com) Student1256054
+                  Nguyen Anh Duc-Student1280949-n.a.duc028@gmail.com
+                  
+                  Luu Quang Nhat-Student1280955-quangnhat.luu@gmail.com
+                  
+                  Cao Nguyen Phien-Student1280932-caonguyenphien@gmail.com
 
-             Vu Quang Dat (dat.quang09@gmail.com) Student1248885
-             
-             Nguyen Phuoc Vinh Huy (sickmyduck23.3@gmail.com) Student1254039
 ============================
 
 eProject documentation at https://github.com/haruyuki7121994/rhythm.github.io/tree/master/documentation
