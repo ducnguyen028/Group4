@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    /* The grid: Three equal columns that floats next to each other */
+    .column {
+        margin-left: 3rem;
+        float: left;
+        width: 20%;
+        padding: 5px;
+        text-align: center;
+        font-size: 10px;
+        cursor: pointer;
+        color: white;
+    }
+
+    .containerTab {
+        padding: 20px;
+        color: white;
+    }
+
+    /* Clear floats after the columns */
+    .row:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    /* Closable button inside the container tab */
+    .closebtn {
+        float: right;
+        color: white;
+        font-size: 35px;
+        cursor: pointer;
+    }
+</style>
+
+<body>
+    <div style="text-align:center">
+        <h2>Expanding Grid</h2>
+        <p>Click on the boxes below:</p>
+    </div>
+
+    <!-- Three columns -->
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6 col-md-3 column">
+                <img src="images/MarcusWareing.png" alt="" onclick="openTab('b1');" style="width: 100%;">
+            </div>
+            <div class="col-sm-6 col-md-3 column">
+                <img src="images/GordonRamsay.png" alt="" onclick="openTab('b2');" style="width: 100%;">
+            </div>
+            <div class="col-sm-6 col-md-3 column">
+                <img src="images/MassimoBottura.png" alt="" onclick="openTab('b3');" style="width: 100%;">
+            </div>
+            <div class="col-sm-6 col-md-3 column">
+                <img src="images/MichelRouxJr.png" alt="" onclick="openTab('b4');" style="width: 100%;">
+            </div>
+        </div>
+    </div>
+
+    <!-- Full-width columns: (hidden by default) -->
+    <div id="b1" class="containerTab" style="display:none;background:green">
+        <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+        <h2>Marcus Wareing</h2>
+        <p>
+            A popular celebrity chef in the UK, Marcus Wareing trained under the likes of Albert Roux and Gordon Ramsay.
+            Excelling and branching out on his own, he now boasts 4 restaurants to choose from in London. Catering to
+            all tastes and budgets, you can experience Michelin-starred dining at Marcus or casual comfort food heaven
+            at Tredwell’s in Covent Garden. Marcus Wareing is often a judge for Great British Menu and has succeeded
+            Michel Roux Jr as judge for Masterchef The Professionals.
+        </p>
+    </div>
+    <a href="javasctipt:void();">Show more</a>
+
+    <div id="b2" class="containerTab">
+        <h2>Gordon Ramsay</h2>
+        <p>
+            A popular celebrity chef in the UK, Marcus Wareing trained under the likes of Albert Roux and Gordon Ramsay.
+            Excelling and branching out on his own, he now boasts 4 restaurants to choose from in London. Catering to
+            all tastes and budgets, you can experience Michelin-starred dining at Marcus or casual comfort food heaven
+            at Tredwell’s in Covent Garden. Marcus Wareing is often a judge for Great British Menu and has succeeded
+            Michel Roux Jr as judge for Masterchef The Professionals.
+        </p>
+    </div>
+    <a href="javasctipt:void();">Show more</a>
+
+    <div id="b3" class="containerTab">
+        <h2>Massimo Bottura</h2>
+        <p>
+            Chef patron of Osteria Francescana boasts 3 Michelin stars and can be found in Modena, Italy. It has been
+            listed in the top 5 of The World’s 50 Best Restaurants since 2010. Bottura has worked with Alain Ducasse,
+            and not long after opening Osteria Francescana, he spent a summer at El Bulli with Ferran Adrià. In 2011, he
+            opened Franceschetta 58 with Marta Pulini: a more casual dining experience which even offers a buffet lunch
+            with an “all you can eat” format. Bottura is known internationally and greatly admired by colleagues and
+            clients alike.
+        </p>
+    </div>
+    <a href="javasctipt:void();">Show more</a>
+
+    <div id="b4" class="containerTab">
+        <h2>Michel Roux Jr</h2>
+        <p>
+            Michel Roux Jr runs the two Michelin-starred restaurant Le Gavroche, and this year celebrates 25 years at
+            the helm. Michel has become well known on TV presenting cooking shows like Masterchef; he is involved in
+            charities and also become involved in an underground farm that grows sustainable, fresh micro greens and
+            salad leaves. His daughter Emily can now be found in the kitchen at Le Gavroche, guaranteeing the
+            continuation of the Roux legacy.
+        </p>
+    </div>
+    <a href="javasctipt:void();">Show more</a>
+</body>
+
+<script>
+    $(document).ready(function () {
+
+        $('a').on("click", function () {
+            $(this).prev("div").toggleClass('containerTab');
+            if ($(this).text() == 'Show more') {
+                $(this).text('Show Less');
+            }
+            else {
+                $(this).text('Show more');
+            }
+        });
+    });
+</script>
+
+</html>

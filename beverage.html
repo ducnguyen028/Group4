@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Beverages</title>
+    <title>Dessert</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <script src="js/jquery-3.5.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
@@ -12,92 +12,127 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
 </head>
 <style>
-    .c1 {
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: rgba(202, 76, 76, 0.733);
+    }
+
+    #myImg {
+        border-radius: 5px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    #myImg:hover {
+        opacity: 0.7;
+    }
+
+    .food {
+        float: left;
+        padding: 0.5rem;
+    }
+
+    /* The Modal (background) */
+    .modal {
+        display: none;
+        /* Hidden by default */
+        position: fixed;
+        /* Stay in place */
+        z-index: 1;
+        /* Sit on top */
+        padding-top: 100px;
+        /* Location of the box */
+        left: 0;
+        top: 0;
         width: 100%;
-        color: wheat;
-        margin-top: 10rem;
-        background-color: black;
-        text-align: center;
+        /* Full width */
+        height: 100%;
+        /* Full height */
+        overflow: auto;
+        /* Enable scroll if needed */
+        background-color: rgb(0, 0, 0);
+        /* Fallback color */
+        background-color: rgba(0, 0, 0, 0.9);
+        /* Black w/ opacity */
     }
 
-    h2 {
-        margin-top: 10rem;
-        display: inline-block;
-        text-align: center;
-        margin-left: 2rem;
-
+    /* Modal Content (image) */
+    .modal-content {
+        margin: auto;
+        display: block;
+        width: 30%;
+        height: 30%;
     }
 
-    .image {
-        border: black solid thin;
-        width: 70%;
-        margin: 2rem;
+
+    /* Add Animation */
+    .modal-content {
+        -webkit-animation-name: zoom;
+        -webkit-animation-duration: 0.6s;
+        animation-name: zoom;
+        animation-duration: 0.6s;
+    }
+
+    .detail-content {
+        background-color: rgba(0, 0, 0, 0.8);
+        color: white;
+        position: absolute;
+        opacity: 1;
+        bottom: -30rem;
+    }
+
+    .capt, .cnt{
+        font-size: 1rem;
+    }
+
+    @-webkit-keyframes zoom {
+        from {
+            -webkit-transform: scale(0)
+        }
+
+        to {
+            -webkit-transform: scale(1)
+        }
+    }
+
+    @keyframes zoom {
+        from {
+            transform: scale(0)
+        }
+
+        to {
+            transform: scale(1)
+        }
+    }
+
+    /* The Close Button */
+    .close {
+        position: absolute;
+        top: 15px;
+        right: 35px;
+        color: #f1f1f1;
+        font-size: 40px;
+        font-weight: bold;
+        transition: 0.3s;
+    }
+
+    .close:hover,
+    .close:focus {
+        color: #bbb;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    /* 100% Image Width on Smaller Screens */
+    @media only screen and (max-width: 700px) {
+        .modal-content {
+            width: 100%;
+        }
     }
 
     .pagination {
         border: hidden;
-        padding-left: 120rem;
-    }
-
-    .overlay {
-        display: block;
-        position: absolute;
-        top: 16.2rem;
-        bottom: 0;
-        left: 3.5rem;
-        right: 0;
-        height: 73.4%;
-        width: 65.7%;
-        opacity: 0;
-        transition: .2s ease;
-        background-color: rgba(0, 0, 0, 0.6);
-    }
-
-    #pic1:hover .overlay {
-        opacity: 10;
-    }
-
-    #pic2:hover .overlay {
-        opacity: 10;
-    }
-
-    #pic3:hover .overlay {
-        opacity: 10;
-    }
-
-    #pic4:hover .overlay {
-        opacity: 10;
-    }
-
-    #pic5:hover .overlay {
-        opacity: 10;
-    }
-
-    #pic6:hover .overlay {
-        opacity: 10;
-    }
-
-    #pic7:hover .overlay {
-        opacity: 10;
-    }
-
-    #pic8:hover .overlay {
-        opacity: 10;
-    }
-
-    #pic9:hover .overlay {
-        opacity: 10;
-    }
-
-    .text {
-        display: inline-block;
-        color: white;
-        font-size: 10px;
-        position: absolute;
-        top: 50%;
-        left: 35%;
-        transform: translate(-50%, -50%);
-        text-align: justify;
+        padding-left: 125rem;
     }
 </style>
 
@@ -147,16 +182,70 @@
             </div><!-- /.navbar-collapse -->
         </nav>
 
-        <div class="grid-container">
+        <div class="header_padding" style=" margin-top: 8rem; margin-bottom: 2rem; text-align: center;">
+            <H1
+                style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; color: rgb(141, 109, 67);">
+                - BEVERAGE -</H1>
+        </div>
+        <hr>
+
+        <div class="container">
             <div class="row">
-                <div class="col-sm-12 col-md-12 c1">
-                    <h1>BEVERAGES</h1>
+                <div class="col-sm-6 col-md-4 food">
+                    <img id="myImg" src="images/balticPorter.jpg" alt="" style="width:100%"
+                        onclick="openModal();currentSlide(1)">
                 </div>
-                <div class="col-sm-6 col-md-4" id="pic1">
-                    <h2>Baltic Porter</h2>
-                    <img src="images/balticPorter.jpg" alt="" class="image">
-                    <div class="overlay">
-                        <div class="text">
+
+                <div class="col-sm-6 col-md-4 food">
+                    <img id="myImg" src="images/pumpkinbeer.jpg" alt="" style="width:100%"
+                        onclick="openModal();currentSlide(2)">
+                </div>
+
+                <div class="col-sm-6 col-md-4 food">
+                    <img id="myImg" src="images/weizenbock.png" alt="" style="width:100%"
+                        onclick="openModal();currentSlide(3)">
+                </div>
+
+                <div class="col-sm-6 col-md-4 food">
+                    <img id="myImg" src="images/barley.jpg" alt="" style="width:100%"
+                        onclick="openModal();currentSlide(4)">
+                </div>
+
+                <div class="col-sm-6 col-md-4 food">
+                    <img id="myImg" src="images/california.jpg" alt="" style="width: 100%"
+                        onclick="openModal();currentSlide(5)">
+                </div>
+
+                <div class="col-sm-6 col-md-4 food">
+                    <img id="myImg" src="images/barleyBernese.jpg" alt="" style="width:100%"
+                        onclick="openModal();currentSlide(6)">
+                </div>
+
+                <div class="col-sm-6 col-md-4 food">
+                    <img id="myImg" src="images/mazen.jpg" alt="" style="width:100%"
+                        onclick="openModal();currentSlide(7)">
+                </div>
+
+                <div class="col-sm-6 col-md-4 food">
+                    <img id="myImg" src="images/schwarzbier.png" alt="" style="width:100%"
+                        onclick="openModal();currentSlide(8)">
+                </div>
+
+                <div class="col-sm-6 col-md-4 food">
+                    <img id="myImg" src="images/chimayred.jpg" alt="" style="width: 100%"
+                        onclick="openModal();currentSlide(9)">
+                </div>
+            </div>
+        </div>
+
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <div class="mySlides">
+                    <img src="images/balticPorter.jpg" style="width:100%">
+                    <div class="detail-content">
+                        <h3 class="capt">Baltic Porter</h3>
+                        <p>
                             This beer style evolved from the British porter, and it was partially influenced by imperial
                             stouts. The beers that fall under this category will typically have high alcohol content,
                             usually between 5.5 and 9.5% ABV, while their color ranges from mahogany red to dark brown.
@@ -164,14 +253,15 @@
                             complemented by aromas of toast, caramel, licorice, dried fruit, chocolate, and coffee.
                             Baltic porter first appeared when stronger and hoppier versions of British porter were sent
                             to Russia
-                        </div>
+                        </p>
                     </div>
                 </div>
-                <div class="col-sm-6 col-md-4" id="pic2">
-                    <h2>Pumpkin Beer</h2>
-                    <img src="images/pumpkinbeer.jpg" alt="" class="image">
-                    <div class="overlay">
-                        <div class="text">
+
+                <div class="mySlides">
+                    <img src="images/pumpkinbeer.jpg" style="width:100%">
+                    <div class="detail-content">
+                        <h3 class="capt">Pumpkin Beer</h3>
+                        <p>
                             Pumpkin beer has a long history in the United States that goes back to colonial brewing, but
                             its
                             modern interpretation is believed to have first appeared in the 1980s, while the first
@@ -181,14 +271,15 @@
                             grains. However, many producers do not even include pumpkin but opt for pumpkin-spice
                             flavorings
                             and spices such as cinnamon, allspice, cloves, or nutmeg.
-                        </div>
+                        </p>
                     </div>
                 </div>
-                <div class="col-sm-6 col-md-4" id="pic3">
-                    <h2>Weizenbock</h2>
-                    <img src="images/weizenbock.png" alt="" class="image">
-                    <div class="overlay">
-                        <div class="text">
+
+                <div class="mySlides">
+                    <img src="images/weizenbock.png" style="width:100%">
+                    <div class="detail-content">
+                        <h3 class="capt">Weizenbock</h3>
+                        <p class="cnt">
                             Weizenbock is a German beer style that was introduced in 1907 by the Schneider Weisse
                             Brauhaus
                             brewery located in Munich. Weizenbock was supposed to be a middle-ground between the rich
@@ -200,14 +291,15 @@
                             versions may have a richer malt profile and heavier toasty expressions with possible hints
                             of
                             caramel flavors and aromas of raisins and plums.
-                        </div>
+                        </p>
                     </div>
                 </div>
-                <div class="col-sm-6 col-md-4" id="pic4">
-                    <h2>American barley wine</h2>
-                    <img src="images/barley.jpg" alt="" class="image">
-                    <div class="overlay">
-                        <div class="text">
+
+                <div class="mySlides">
+                    <img src="images/barley.jpg" style="width:100%">
+                    <div class="detail-content">
+                        <h3 class="capt">American barley wine</h3>
+                        <p class="cnt">
                             American barley wine originated from the original British style of barley wines—bold brews
                             with
                             strong malty flavors. The first examples of American-style barley wines appeared in 1975
@@ -218,27 +310,29 @@
                             but unlike the British counterparts, American versions will usually have more assertive hop
                             flavors. The beers that fall into this style are typically rich, full-bodied, light amber to
                             medium copper, and luscious.
-                        </div>
+                        </p>
                     </div>
                 </div>
-                <div class="col-sm-6 col-md-4" id="pic5">
-                    <h2>California Common</h2>
-                    <img src="images/california.jpg" alt="" class="image">
-                    <div class="overlay">
-                        <div class="text">
+
+                <div class="mySlides">
+                    <img src="images/california.jpg" style="width:100%">
+                    <div class="detail-content">
+                        <h3 class="capt">California Common</h3>
+                        <p class="cnt">
                             California common is a hybrid beer style that is brewed with lager yeast but is then
                             fermented
                             at ale temperatures. Modern interpretations were made to reflect historical steam beer that
                             first appeared on the West Coast during the Gold Rush era. It was an improvised and somewhat
                             rustic style that grew out of necessity.
-                        </div>
+                        </p>
                     </div>
                 </div>
-                <div class="col-sm-6 col-md-4" id="pic6">
-                    <h2>English Barley Wine</h2>
-                    <img src="images/barleyBernese.jpg" alt="" class="image">
-                    <div class="overlay">
-                        <div class="text">
+
+                <div class="mySlides">
+                    <img src="images/barleyBernese.jpg" style="width:100%">
+                    <div class="detail-content">
+                        <h3 class="capt">English Barley Wine</h3>
+                        <p class="cnt">
                             Despite its unusual name, English barley wine is a beer style that is often dubbed as the
                             grandfather of all brews. This style is strong, rich, and usually moderately hoppy with
                             pronounced malt flavors, and typical aromas of bread, toast, toffee, dried fruit, and
@@ -249,14 +343,15 @@
                             overpowering since the brews mellow with age. Their color is quite versatile and may include
                             deep gold and even dark brown varieties, but they are always full-bodied, complex, bold,
                             intense, smooth, and velvety.
-                        </div>
+                        </p>
                     </div>
                 </div>
-                <div class="col-sm-6 col-md-4" id="pic7">
-                    <h2>Märzen</h2>
-                    <img src="images/mazen.jpg" alt="" class="image">
-                    <div class="overlay">
-                        <div class="text">
+
+                <div class="mySlides">
+                    <img src="images/mazen.jpg" style="width:100%">
+                    <div class="detail-content">
+                        <h3 class="capt">Märzen</h3>
+                        <p class="cnt">
                             Märzen is a German beer style from Bavaria that is closely connected with Oktoberfestbier
                             and
                             shares some similarities with Vienna lager. This style officially appeared in 1841 when it
@@ -268,14 +363,15 @@
                             suggests—Märzen translates as March—they were brewed in March and then left to lager until
                             early
                             fall.
-                        </div>
+                        </p>
                     </div>
                 </div>
-                <div class="col-sm-6 col-md-4" id="pic8">
-                    <h2>Schwarzbier</h2>
-                    <img src="images/schwarzbier.png" alt="" class="image">
-                    <div class="overlay">
-                        <div class="text">
+
+                <div class="mySlides">
+                    <img src="images/schwarzbier.png" style="width:100%">
+                    <div class="detail-content">
+                        <h3 class="capt">Schwarzbier</h3>
+                        <p class="cnt">
                             Schwarzbier is a German dark lager style. These beers are not overly powerful or harsh, and
                             they
                             tend to be smooth and refreshing. The use of malted barley will give them a lightly roasted
@@ -287,14 +383,15 @@
                             These beers would pair well with sausages, roasted or barbecued meat, washed-rind cheese
                             varieties, and chocolate or fruit desserts. Schwarzbier is often quoted as one of the oldest
                             beer styles in the world.
-                        </div>
+                        </p>
                     </div>
                 </div>
-                <div class="col-sm-6 col-md-4" id="pic9">
-                    <h2>Chimay Red</h2>
-                    <img src="images/chimayred.jpg" alt="" class="image">
-                    <div class="overlay">
-                        <div class="text">
+
+                <div class="mySlides">
+                    <img src="images/chimayred.jpg" style="width:100%">
+                    <div class="detail-content">
+                        <h3 class="capt">Chimay Red</h3>
+                        <p class="cnt">
                             Chimay Red was the first Trappist beer that was brewed by monks at the Scourmont Abbey, a
                             Trappist monastery in Chimay, Belgium. This amber-colored dubbel—a specific Trappist
                             style—is
@@ -307,11 +404,12 @@
                             and active yeast is then added to create effervescence and to reach the desired alcohol
                             content
                             (7% ABV).
-                        </div>
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
+
 
         <ul class="pagination">
             <li><a href="beverage.html">1</a></li>
@@ -323,31 +421,112 @@
             <footer>
                 <div class="container">
                     <div class="row">
-                        <div class="col-sm-6 col-md-3 item">
-                            <h3>Home</h3>
+                        <div class="col-sm-6 col-md-2 item">
+    
                             <ul>
+                                <li><a href="#">Home</a></li>
                                 <li><a href="#">About us</a></li>
                                 <li><a href="#">Gallery</a></li>
                                 <li><a href="#">Awards</a></li>
+                                <li><a href="#">Catering</a></li>
+                                <li><a href="#">Recipe of the month </a></li>
                             </ul>
                         </div>
-                        <div class="col-sm-6 col-md-3 item">
-                            <h3>Meals</h3>
+                        <div class="col-sm-6 col-md-2 item">
+    
                             <ul>
-                                <li><a href="#">Company</a></li>
-                                <li><a href="#">Team</a></li>
-                                <li><a href="#">Careers</a></li>
+                                <li><a href="#">Regular</a></li>
+                                <li><a href="#">Lunch</a></li>
+                                <li><a href="#">Snacks</a></li>
+                                <li><a href="#">Dessert</a></li>
+                                <li><a href="#">Beverages</a></li>
                             </ul>
+                        </div>
+    
+                        <div class="col-sm-6 col-md-2 item">
+    
+                            <ul>
+                                <li><a href="#">Contact us</a></li>
+                                <li><a href="#">Feedback</a></li>
+    
+                            </ul>
+                        </div>
+                        <div class="col-md-6 item text">
+                            <h3>Vinegar Food Restaurant</h3>
+                            <p
+                                style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-size: 1.5rem;">
+                                Vinegar Food Restaurant is a registered brand of JADONS Ltd. <br>
+                                Business registration number: 2233445566 issued by the Ministry of Commerce <br>
+                                Headquarter office: 999 Pasteur Street, District 1, Ho Chi Minh City, Viet Nam. <br>
+                                Hotline: +84 1900 9999 - +84 1900 9898 <br>
+                            </p>
                         </div>
                         <div class="col item social"><a href="#"><i class="icon ion-social-facebook"></i></a><a
                                 href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i
                                     class="icon ion-social-snapchat"></i></a><a href="#"><i
                                     class="icon ion-social-instagram"></i></a></div>
                     </div>
-                    <p class="copyright">JADONS LTD © 2018</p>
+                    <p class="copyright">&copy 1990 - 2020 Vinegar Food Restaurant - All Rights Reserved.</p>
                 </div>
             </footer>
         </div>
 </body>
+
+<script>
+
+    function openModal() {
+        document.getElementById("myModal").style.display = "block";
+    }
+
+    function closeModal() {
+        document.getElementById("myModal").style.display = "none";
+    }
+
+    // Get the modal
+    var modal = document.getElementById("myModal");
+
+    // Get the image and insert it inside the modal - use its "alt" text as a caption
+    var img = document.getElementById("myImg");
+    var modalImg = document.getElementsById("mySlides");
+    img.onclick = function () {
+        modal.style.display = "block";
+        modalImg.src = this.src;
+        captionText.innerHTML = this.alt;
+    }
+
+    var slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("demo");
+        if (n > slides.length) { slideIndex = 1 }
+        if (n < 1) { slideIndex = slides.length }
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " active";
+    }
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close");
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function () {
+        modal.style.display = "none";
+    }
+</script>
 
 </html>

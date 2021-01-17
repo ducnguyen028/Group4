@@ -12,33 +12,31 @@
     <script src="js/bootstrap.min.js"></script>
 </head>
 <style>
-    p{
+    body {
+        font-family: Verdana, Arial, Helvetica, sans-serif;
+        background-image: linear-gradient(violet, yellow);
+    }
+
+    div.hide {
+        display: none;
+    }
+
+    .cnt {
+        margin-top: 10rem;
+        margin-bottom: 2rem;
         text-align: justify;
-        margin-left: 35rem;
-        width: 27%;
     }
 
-    h3 {
-        margin-top: 8rem;
-        text-align: center;
+    p,
+    a {
+        padding-bottom: .4em;
+        padding-left: 2px;
     }
 
-    .carousel-inner .active.left {
-        left: -50%;
-    }
-
-    .carousel-inner .next {
-        left: 33%;
-    }
-
-    .carousel-control.left{
-        background-image: none;
-    }
-
-    .carousel-control.right{
-        background-image: none;
-        margin-right: 10rem;
-        width: 90%;
+    a,
+    a:focus,
+    a:hover {
+        color: blue;
     }
 </style>
 
@@ -89,112 +87,186 @@
         </nav>
     </div>
 
-    <div class="container c1">
-        <div class="col-lg-12 text-center">
-            <h3>Chef</h3>
-        </div>
-        <div class="col-lg-4 col-md-offset-3">
-            <div class="carousel slide" id="myCarousel" data-interval="false">
-                <div class="carousel-inner">
-                    <div class="item active">
-                        <div class="col-lg-3"><a href="#"><img src="images/MarcusWareing.png" class="img-responsive"></a></div>
-                        <p>A popular celebrity chef in the UK, Marcus Wareing trained under the likes of Albert Roux and Gordon Ramsay. Excelling and branching out on his own, he now boasts 4 restaurants to choose from in London. Catering to all tastes and budgets, you can experience Michelin-starred dining at Marcus or casual comfort food heaven at Tredwell’s in Covent Garden. Marcus Wareing is often a judge for Great British Menu and has succeeded Michel Roux Jr as judge for Masterchef The Professionals.</p>
-                    </div>
-                    <div class="item">
-                        <div class="col-lg-3"><a href="#"><img src="images/GordonRamsay.png" class="img-responsive"></a></div>
-                        <p>A popular celebrity chef in the UK, Marcus Wareing trained under the likes of Albert Roux and Gordon Ramsay. Excelling and branching out on his own, he now boasts 4 restaurants to choose from in London. Catering to all tastes and budgets, you can experience Michelin-starred dining at Marcus or casual comfort food heaven at Tredwell’s in Covent Garden. Marcus Wareing is often a judge for Great British Menu and has succeeded Michel Roux Jr as judge for Masterchef The Professionals.</p>
-                    </div>
-                    <div class="item">
-                        <div class="col-lg-3"><a href="#"><img src="images/MassimoBottura.png" class="img-responsive"></a></div>
-                        <p>Chef patron of Osteria Francescana boasts 3 Michelin stars and can be found in Modena, Italy. It has been listed in the top 5 of The World’s 50 Best Restaurants since 2010. Bottura has worked with Alain Ducasse, and not long after opening Osteria Francescana, he spent a summer at El Bulli with Ferran Adrià. In 2011, he opened Franceschetta 58 with Marta Pulini: a more casual dining experience which even offers a buffet lunch with an “all you can eat” format. Bottura is known internationally and greatly admired by colleagues and clients alike.</p>
-                    </div>
-                    <div class="item">
-                        <div class="col-lg-3"><a href="#"><img src="images/MichelRouxJr.png" class="img-responsive"></a></div>
-                        <p>Michel Roux Jr runs the two Michelin-starred restaurant Le Gavroche, and this year celebrates 25 years at the helm. Michel has become well known on TV presenting cooking shows like Masterchef; he is involved in charities and also become involved in an underground farm that grows sustainable, fresh micro greens and salad leaves. His daughter Emily can now be found in the kitchen at Le Gavroche, guaranteeing the continuation of the Roux legacy.</p>
-                    </div>
-                </div>
-                <a class="left carousel-control" href="#myCarousel" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
-                <a class="right carousel-control" href="#myCarousel" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a>
-            </div>
-        </div>
+    <div class="header_padding" style=" margin-top: 8rem; margin-bottom: 2rem; text-align: center;">
+        <H1
+            style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; color: rgb(141, 109, 67);">
+            - GALLERY -</H1>
+    </div>
+    <hr>
 
-        <div class="col-lg-12 text-center">
-            <h3>Quality</h3>
-        </div>
-        <div class="col-lg-6 col-md-offset-3">
-            <div class="carousel slide" id="myCarousel1" data-interval="false">
-                <div class="carousel-inner" style="margin-bottom: 5rem;">
-                    <div class="item active">
-                        <div class="col-lg-3"><a href="#"><img src="images/retaurant1.jpg" class="img-responsive"></a></div>
-                        <p>Vinegar is one of the best view restaurant in the world. On the high of 54th floor, customer can both having meals and watching the sunset or start on the sky</p>
+    <div class="container">
+        <div class="row">
+            <main id="jdom">
+                <div class="col-md-3 chef">
+                    <div class="cnt">
+                        <img src="images/MarcusWareing.png" alt=""
+                            style="width: 100%; text-shadow: 2px 2px 4px #fdcb3f;">
                     </div>
-                    <div class="item">
-                        <div class="col-lg-3"><a href="#"><img src="images/restaurant3.jpg" class="img-responsive"></a></div>
-                        <p>The kitchen of Vinegar is always kept in the good condition. The will be no rat or garbage in the kitchen. There always has 2-3 staff go around, check and clean in case of water on the floor or dirty kitchen equipments.</p>
+                    <div class="hide">
+                        <h3 class="capt">Marcus Wareing</h3>
+                        <p style="font-size: 1.5rem;">
+                            A popular celebrity chef in the UK, Marcus Wareing trained under the likes of Albert Roux
+                            and Gordon
+                            Ramsay.
+                            Excelling and branching out on his own, he now boasts 4 restaurants to choose from in
+                            London. Catering
+                            to
+                            all tastes and budgets, you can experience Michelin-starred dining at Marcus or casual
+                            comfort food
+                            heaven
+                            at Tredwell’s in Covent Garden. Marcus Wareing is often a judge for Great British Menu and
+                            has succeeded
+                            Michel Roux Jr as judge for Masterchef The Professionals.
+                        </p>
                     </div>
-                    <div class="item">
-                        <div class="col-lg-3"><a href="#"><img src="images/ham-ruou.jpg" class="img-responsive"></a></div>
-                        <p>Vinegar own for itself a costly collection of wine with server famous brand in the world. Customer who has interrest in wine and enjoying it, Vinegar is such a good selection for them. You can know more about Vinegar's in <a rel="stylesheet" href="beverage2.html">wines</a></p>.
-                    </div>
-                    <div class="item">
-                        <div class="col-lg-3"><a href="#"><img src="images/Vegetable.png" class="img-responsive"></a></div>
-                        <p>Clean and organic foods are the top secret of Vinegar in achieving most of awards. Clean vegetable is the strength of Vinegar in providing customer with healthy meals. For that reason, Vinegar owns for itself a private garden with 10ha.</p>
-                    </div>
+                    <a href="javasctipt:void();" style="margin-bottom: 10rem;">Show more</a>
                 </div>
-                <a class="left carousel-control" href="#myCarousel1" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
-                <a class="right carousel-control" href="#myCarousel1" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a>
-            </div>
+
+                <div class="col-md-3 chef">
+                    <div class="cnt">
+                        <img src="images/GordonRamsay.png" alt=""
+                            style="width: 100%; text-shadow: 2px 2px 4px #fdcb3f;">
+                    </div>
+                    <div class="hide">
+                        <h3>Gordon Ramsay</h3>
+                        <p style="font-size: 1.5rem;">
+                            A popular celebrity chef in the UK, Marcus Wareing trained under the likes of Albert Roux
+                            and Gordon
+                            Ramsay.
+                            Excelling and branching out on his own, he now boasts 4 restaurants to choose from in
+                            London. Catering
+                            to
+                            all tastes and budgets, you can experience Michelin-starred dining at Marcus or casual
+                            comfort food
+                            heaven
+                            at Tredwell’s in Covent Garden. Marcus Wareing is often a judge for Great British Menu and
+                            has succeeded
+                            Michel Roux Jr as judge for Masterchef The Professionals.
+                        </p>
+                    </div>
+                    <a href="javasctipt:void();" style="margin-bottom: 10rem;">Show more</a>
+                </div>
+
+                <div class="col-md-3 chef">
+                    <div class="cnt">
+                        <img src="images/MassimoBottura.png" alt=""
+                            style="width: 100%; text-shadow: 2px 2px 4px #fdcb3f;">
+                    </div>
+                    <div class="hide">
+                        <h3>Massimo Bottura</h3>
+                        <p style="font-size: 1.5rem;">
+                            Chef patron of Osteria Francescana boasts 3 Michelin stars and can be found in Modena,
+                            Italy. It has
+                            been
+                            listed in the top 5 of The World’s 50 Best Restaurants since 2010. Bottura has worked with
+                            Alain
+                            Ducasse,
+                            and not long after opening Osteria Francescana, he spent a summer at El Bulli with Ferran
+                            Adrià. In
+                            2011, he
+                            opened Franceschetta 58 with Marta Pulini: a more casual dining experience which even offers
+                            a buffet
+                            lunch
+                            with an “all you can eat” format. Bottura is known internationally and greatly admired by
+                            colleagues and
+                            clients alike.
+                        </p>
+                    </div>
+                    <a href="javasctipt:void();" style="margin-bottom: 10rem;">Show more</a>
+                </div>
+
+                <div class="col-md-3 chef">
+                    <div class="cnt">
+                        <img src="images/MichelRouxJr.png" alt=""
+                            style="width: 100%; text-shadow: 2px 2px 4px #fdcb3f;">
+                    </div>
+                    <div class="hide">
+                        <h3>Michel Roux Jr</h3>
+                        <p style="font-size: 1.5rem;">
+                            Michel Roux Jr runs the two Michelin-starred restaurant Le Gavroche, and this year
+                            celebrates 25 years
+                            at
+                            the helm. Michel has become well known on TV presenting cooking shows like Masterchef; he is
+                            involved in
+                            charities and also become involved in an underground farm that grows sustainable, fresh
+                            micro greens and
+                            salad leaves. His daughter Emily can now be found in the kitchen at Le Gavroche,
+                            guaranteeing the
+                            continuation of the Roux legacy.
+                        </p>
+                    </div>
+                    <a href="javasctipt:void();" style="margin-bottom: 10rem;">Show more</a>
+                </div>
+            </main>
         </div>
     </div>
-    
+
     <div class="footer-dark">
         <footer>
             <div class="container">
                 <div class="row">
-                    <div class="col-sm-6 col-md-3 item">
-                        <h3>Home</h3>
+                    <div class="col-sm-6 col-md-2 item">
+
                         <ul>
+                            <li><a href="#">Home</a></li>
                             <li><a href="#">About us</a></li>
                             <li><a href="#">Gallery</a></li>
                             <li><a href="#">Awards</a></li>
+                            <li><a href="#">Catering</a></li>
+                            <li><a href="#">Recipe of the month </a></li>
                         </ul>
                     </div>
-                    <div class="col-sm-6 col-md-3 item">
-                        <h3>Meals</h3>
+                    <div class="col-sm-6 col-md-2 item">
+
                         <ul>
-                            <li><a href="#">Company</a></li>
-                            <li><a href="#">Team</a></li>
-                            <li><a href="#">Careers</a></li>
+                            <li><a href="#">Regular</a></li>
+                            <li><a href="#">Lunch</a></li>
+                            <li><a href="#">Snacks</a></li>
+                            <li><a href="#">Dessert</a></li>
+                            <li><a href="#">Beverages</a></li>
                         </ul>
+                    </div>
+
+                    <div class="col-sm-6 col-md-2 item">
+
+                        <ul>
+                            <li><a href="#">Contact us</a></li>
+                            <li><a href="#">Feedback</a></li>
+
+                        </ul>
+                    </div>
+                    <div class="col-md-6 item text">
+                        <h3>Vinegar Food Restaurant</h3>
+                        <p
+                            style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-size: 1.5rem;">
+                            Vinegar Food Restaurant is a registered brand of JADONS Ltd. <br>
+                            Business registration number: 2233445566 issued by the Ministry of Commerce <br>
+                            Headquarter office: 999 Pasteur Street, District 1, Ho Chi Minh City, Viet Nam. <br>
+                            Hotline: +84 1900 9999 - +84 1900 9898 <br>
+                        </p>
                     </div>
                     <div class="col item social"><a href="#"><i class="icon ion-social-facebook"></i></a><a href="#"><i
                                 class="icon ion-social-twitter"></i></a><a href="#"><i
                                 class="icon ion-social-snapchat"></i></a><a href="#"><i
                                 class="icon ion-social-instagram"></i></a></div>
                 </div>
-                <p class="copyright">JADONS LTD © 2018</p>
+                <p class="copyright">&copy 1990 - 2020 Vinegar Food Restaurant - All Rights Reserved.</p>
             </div>
         </footer>
     </div>
-
 </body>
 <script>
-    $('#myCarousel').carousel({})
-    $('.carousel .item').each(function () {
-        var next = $(this).next();
-        for (!next.length) {
-            next = $(this).siblings(':first');
-        }
-        next.children(':first-child').clone().appendTo($(this));
-    });
+    $(document).ready(function () {
 
-    $('#myCarousel1').carousel({})
-    $('.carousel .item').each(function () {
-        var next = $(this).next();
-    for (!next.length) {
-            next = $(this).siblings(':first');
-        }
-        next.children(':first-child').clone().appendTo($(this));
+        $('a').on("click", function () {
+            $(this).prev("div").toggleClass('hide');
+            if ($(this).text() == 'Show more') {
+                $(this).text('Show Less');
+            }
+            else {
+                $(this).text('Show more');
+            }
+        });
     });
 </script>
 

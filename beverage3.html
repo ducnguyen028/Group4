@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Beverages</title>
+    <title>Dessert</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <script src="js/jquery-3.5.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
@@ -12,89 +12,127 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
 </head>
 <style>
-    .c1{
-        color: wheat;
-        margin-top: 10rem;
-        background-color: black;
-        text-align: center;
-    }
-    h2 {
-        margin-top: 10rem;
-        display: inline-block;
-        text-align: center;
-        margin-left: 4rem;
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: rgba(202, 76, 76, 0.733);
     }
 
-    .image {
-        border: black solid thin;
-        width: 70%;
-        margin: 2rem;
+    #myImg {
+        border-radius: 5px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    #myImg:hover {
+        opacity: 0.7;
+    }
+
+    .food {
+        float: left;
+        padding: 0.5rem;
+    }
+
+    /* The Modal (background) */
+    .modal {
+        display: none;
+        /* Hidden by default */
+        position: fixed;
+        /* Stay in place */
+        z-index: 1;
+        /* Sit on top */
+        padding-top: 100px;
+        /* Location of the box */
+        left: 0;
+        top: 0;
+        width: 100%;
+        /* Full width */
+        height: 100%;
+        /* Full height */
+        overflow: auto;
+        /* Enable scroll if needed */
+        background-color: rgb(0, 0, 0);
+        /* Fallback color */
+        background-color: rgba(0, 0, 0, 0.9);
+        /* Black w/ opacity */
+    }
+
+    /* Modal Content (image) */
+    .modal-content {
+        margin: auto;
+        display: block;
+        width: 30%;
+        height: 30%;
+    }
+
+
+    /* Add Animation */
+    .modal-content {
+        -webkit-animation-name: zoom;
+        -webkit-animation-duration: 0.6s;
+        animation-name: zoom;
+        animation-duration: 0.6s;
+    }
+
+    .detail-content {
+        background-color: rgba(0, 0, 0, 0.8);
+        color: white;
+        position: absolute;
+        opacity: 1;
+        bottom: -30rem;
+    }
+
+    .capt, .cnt{
+        font-size: 1rem;
+    }
+
+    @-webkit-keyframes zoom {
+        from {
+            -webkit-transform: scale(0)
+        }
+
+        to {
+            -webkit-transform: scale(1)
+        }
+    }
+
+    @keyframes zoom {
+        from {
+            transform: scale(0)
+        }
+
+        to {
+            transform: scale(1)
+        }
+    }
+
+    /* The Close Button */
+    .close {
+        position: absolute;
+        top: 15px;
+        right: 35px;
+        color: #f1f1f1;
+        font-size: 40px;
+        font-weight: bold;
+        transition: 0.3s;
+    }
+
+    .close:hover,
+    .close:focus {
+        color: #bbb;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    /* 100% Image Width on Smaller Screens */
+    @media only screen and (max-width: 700px) {
+        .modal-content {
+            width: 100%;
+        }
     }
 
     .pagination {
         border: hidden;
-        padding-left: 120rem;
-    }
-
-    .overlay {
-        display: block;
-        position: absolute;
-        top: 16.2rem;
-        bottom: 0;
-        left: 3.5rem;
-        right: 0;
-        height: 65%;
-        width: 65.7%;
-        opacity: 0;
-        transition: .2s ease;
-        background-color: rgba(0, 0, 0, 0.6);
-    }
-
-    #pic1:hover .overlay {
-        opacity: 10;
-    }
-
-    #pic2:hover .overlay {
-        opacity: 10;
-    }
-
-    #pic3:hover .overlay {
-        opacity: 10;
-    }
-
-    #pic4:hover .overlay {
-        opacity: 10;
-    }
-
-    #pic5:hover .overlay {
-        opacity: 10;
-    }
-
-    #pic6:hover .overlay {
-        opacity: 10;
-    }
-
-    #pic7:hover .overlay {
-        opacity: 10;
-    }
-
-    #pic8:hover .overlay {
-        opacity: 10;
-    }
-
-    #pic9:hover .overlay {
-        opacity: 10;
-    }
-
-    .text {
-        display: inline-block;
-        color: white;
-        font-size: 10px;
-        position: absolute;
-        top: 50%;
-        left: 35%;
-        transform: translate(-50%, -50%);
-        text-align: justify;
+        padding-left: 125rem;
     }
 </style>
 
@@ -144,111 +182,173 @@
             </div><!-- /.navbar-collapse -->
         </nav>
 
-        <div class="grid-container">
+        <div class="header_padding" style=" margin-top: 8rem; margin-bottom: 2rem; text-align: center;">
+            <H1
+                style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; color: rgb(141, 109, 67);">
+                - BEVERAGE -</H1>
+        </div>
+        <hr>
+
+        <div class="container">
             <div class="row">
-                <div class="col-sm-12 col-md-12 c1">
-                    <h1>BEVERAGES</h1>
+                <div class="col-sm-6 col-md-6 food">
+                    <img id="myImg" src="images/Coca-Cola.jpg" alt="" style="width:100%"
+                        onclick="openModal();currentSlide(1)">
                 </div>
-                <div class="col-sm-6 col-md-4" id="pic1">
-                    <h2>Coca-Cola</h2>
-                    <img src="images/Coca-Cola.jpg" alt="" class="image">
-                    <div class="overlay">
-                        <div class="text">
+
+                <div class="col-sm-6 col-md-3 food">
+                    <img id="myImg" src="images/pepsi.jpg" alt="" style="width:100%"
+                        onclick="openModal();currentSlide(2)">
+                </div>
+
+                <div class="col-sm-6 col-md-3 food">
+                    <img id="myImg" src="images/coke_diet.jpg" alt="" style="width:100%"
+                        onclick="openModal();currentSlide(3)">
+                </div>
+
+                <div class="col-sm-6 col-md-3 food">
+                    <img id="myImg" src="images/schweppes_soda_water.jpg" alt="" style="width:100%"
+                        onclick="openModal();currentSlide(4)">
+                </div>
+
+                <div class="col-sm-6 col-md-3 food">
+                    <img id="myImg" src="images/capu1.png" alt="" style="width: 100%"
+                        onclick="openModal();currentSlide(5)">
+                </div>
+
+                <div class="col-sm-6 col-md-3 food">
+                    <img id="myImg" src="images/rich-creamy-watermelon-smoothie.jpg" alt="" style="width:100%"
+                        onclick="openModal();currentSlide(6)">
+                </div>
+
+                <div class="col-sm-6 col-md-3 food">
+                    <img id="myImg" src="images/Blueberry-Smoothie.jpg" alt="" style="width:100%"
+                        onclick="openModal();currentSlide(7)">
+                </div>
+
+                <div class="col-sm-6 col-md-3 food">
+                    <img id="myImg" src="images/White-cosmopolitan-cocktail.jpg" alt="" style="width:100%"
+                        onclick="openModal();currentSlide(8)">
+                </div>
+
+                <div class="col-sm-6 col-md-3 food">
+                    <img id="myImg" src="images/spiked-apple-cider.jpg" alt="" style="width: 100%"
+                        onclick="openModal();currentSlide(9)">
+                </div>
+            </div>
+        </div>
+
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <div class="mySlides">
+                    <img src="images/Coca-Cola.jpg" style="width:100%">
+                    <div class="detail-content">
+                        <h3 class="capt">Coca-Cola</h3>
+                        <p class="cnt">
                             It all started in 1886 in Atlanta Georgia, when John Pemberton created the very first
                             delicious, uplifting and ice cold Coca‑Cola. Since then, Coca‑Cola Original Taste has
                             refreshed the globe to become the world’s favourite soft drink. It can be found in a variety
                             of sizes to suit every lifestyle and occasion.
-                        </div>
+                        </p>
                     </div>
                 </div>
-                <div class="col-sm-6 col-md-4" id="pic2">
-                    <h2>Pepsi</h2>
-                    <img src="images/pepsi.jpg" alt="" class="image">
-                    <div class="overlay">
-                        <div class="text">
+
+                <div class="mySlides">
+                    <img src="images/pepsi.jpg" style="width:100%">
+                    <div class="detail-content">
+                        <h3 class="capt">Pepsi</h3>
+                        <p class="cnt">
                             Pepsi is a carbonated soft drink manufactured by PepsiCo.Pepsi is made with carbonated
                             water, high fructose corn syrup, caramel color, sugar, phosphoric acid, caffeine, citric
                             acid, and natural flavors.
-                        </div>
+                        </p>
                     </div>
                 </div>
-                <div class="col-sm-6 col-md-4" id="pic3">
-                    <h2>Coca-Cola Diet</h2>
-                    <img src="images/coke_diet.jpg" alt="" class="image">
-                    <div class="overlay">
-                        <div class="text">
+
+                <div class="mySlides">
+                    <img src="images/coke_diet.jpg" style="width:100%">
+                    <div class="detail-content">
+                        <h3 class="capt">Coca-Cola Diet</h3>
+                        <p class="cnt">
                             Diet Coke, Coca-Cola light or Light Taste Coca-Cola (in the Benelux and Germany) is a
                             sugar-free and no-calorie soft drink produced and distributed by The Coca-Cola Company. It
                             contains artificial sweeteners instead of sugar. The product quickly overtook the
                             company's existing diet cola, Tab, in sales.
-                        </div>
+                        </p>
                     </div>
                 </div>
-                <div class="col-sm-6 col-md-4" id="pic4">
-                    <h2>Soda schweppes</h2>
-                    <img src="images/schweppes_soda_water.jpg" alt="" class="image">
-                    <div class="overlay">
-                        <div class="text">
+
+                <div class="mySlides">
+                    <img src="images/schweppes_soda_water.jpg" style="width:100%">
+                    <div class="detail-content">
+                        <h3 class="capt">Soda schweppes</h3>
+                        <p class="cnt">
                             Schweppes Soda Water is part of the Schweppes range. Schweppes Soda Water is forged through
                             the blending of mineral salts with pristine triple filtered water, before being infused with
                             thousands of delicate bubbles known as “Schweppervescence”.It can be enjoyed on its own or
                             combined with alcohol or fruit juice.
-                        </div>
+                        </p>
                     </div>
                 </div>
-                <div class="col-sm-6 col-md-4" id="pic5">
-                    <h2>Capuchino</h2>
-                    <img src="images/capu1.png" alt="" class="image">
-                    <div class="overlay">
-                        <div class="text">
-                            an espresso-based coffee drink that originated in Italy, and is traditionally prepared with
+
+                <div class="mySlides">
+                    <img src="images/capu1.png" style="width:100%">
+                    <div class="detail-content">
+                        <h3 class="capt">Capuchino</h3>
+                        <p class="cnt">
+                            An espresso-based coffee drink that originated in Italy, and is traditionally prepared with
                             steamed milk foam (microfoam). Variations of the drink involve the use of cream instead of
                             milk, using non-dairy milks, and flavoring with cinnamon or chocolate powder.It is typically
                             smaller in volume than a caffè latte, with a thicker layer of microfoam.
-                        </div>
+                        </p>
                     </div>
                 </div>
-                <div class="col-sm-6 col-md-4" id="pic6">
-                    <h2>Watermelon Smoothie</h2>
-                    <img src="images/rich-creamy-watermelon-smoothie.jpg" alt="" class="image">
-                    <div class="overlay">
-                        <div class="text">
+
+                <div class="mySlides">
+                    <img src="images/rich-creamy-watermelon-smoothie.jpg" style="width:100%">
+                    <div class="detail-content">
+                        <h3 class="capt">Watermelon Smoothie</h3>
+                        <p class="cnt">
                             A blend of frozen watermelon cubes, strawberries, and yogurt, with the optional addition of
                             mint or basil if you feel so inclined, this pink drink is the grown-up equivalent of zipping
                             down a Slip-n-Slide or drinking cold water right from the hose on the hottest day as a kid:
                             utter exhilaration. Ever since drinking Deb’s frozen watermelon mojitos last summer.
-                        </div>
+                        </p>
                     </div>
                 </div>
-                <div class="col-sm-6 col-md-4" id="pic7">
-                    <h2>Blueberry Smoothie</h2>
-                    <img src="images/Blueberry-Smoothie.jpg" alt="" class="image">
-                    <div class="overlay">
-                        <div class="text">
+
+                <div class="mySlides">
+                    <img src="images/BlueberryLemonadePieRecipe.jpg" style="width:100%">
+                    <div class="detail-content">
+                        <h3 class="capt">Blueberry Smoothie</h3>
+                        <p class="cnt">
                             This creamy and refreshing blueberry smoothie is made with juice, yogurt, frozen blueberries
                             and banana, all blended together into a frosty drink. An easy and delicious way to start off
                             your day!
-                        </div>
+                        </p>
                     </div>
                 </div>
-                <div class="col-sm-6 col-md-4" id="pic8">
-                    <h2>White Cosmo Cocktail</h2>
-                    <img src="images/White-cosmopolitan-cocktail.jpg" alt="" class="image">
-                    <div class="overlay">
-                        <div class="text">
+
+                <div class="mySlides">
+                    <img src="images/White-cosmopolitan-cocktail.jpg" style="width:100%">
+                    <div class="detail-content">
+                        <h3 class="capt">White Cosmo Cocktail</h3>
+                        <p class="cnt">
                             The white cosmo is an excellent vodka martini for any occasion, including spring and summer
                             affairs and romantic dinners. It replicates the flavor of the famous cosmopolitan, but opts
                             for white cranberry juice rather than the standard red. The switch removes the pink color
                             and lightens up the fruity sweetness. It's a perfect complement to the lighter cranberry, as
                             well as the lemon juice.
-                        </div>
+                        </p>
                     </div>
                 </div>
-                <div class="col-sm-6 col-md-4" id="pic9">
-                    <h2>Caramelized Oranges</h2>
-                    <img src="images/spiked-apple-cider.jpg" alt="" class="image">
-                    <div class="overlay">
-                        <div class="text">
+
+                <div class="mySlides">
+                    <img src="images/spiked-apple-cider.jpg" style="width:100%">
+                    <div class="detail-content">
+                        <h3 class="capt">Caramelized Oranges</h3>
+                        <p class="cnt">
                             Apple cider is a favorite fall beverage and there are many ways that you can enjoy it. This
                             spiked apple cider recipe is a cold cocktail that's light and refreshing, but retains that
                             warming aspect that makes apple cider great.The cocktail uses aged rum and amaretto for a
@@ -256,11 +356,12 @@
                             apples. To finish off the drink, aromatic bitters balance out the flavors, soda gives it a
                             lively sparkle, and the cinnamon stick adds warm spice while doubling as a natural stir
                             stick.
-                        </div>
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
+
 
         <ul class="pagination">
             <li><a href="beverage.html">1</a></li>
@@ -272,31 +373,112 @@
             <footer>
                 <div class="container">
                     <div class="row">
-                        <div class="col-sm-6 col-md-3 item">
-                            <h3>Home</h3>
+                        <div class="col-sm-6 col-md-2 item">
+    
                             <ul>
+                                <li><a href="#">Home</a></li>
                                 <li><a href="#">About us</a></li>
                                 <li><a href="#">Gallery</a></li>
                                 <li><a href="#">Awards</a></li>
+                                <li><a href="#">Catering</a></li>
+                                <li><a href="#">Recipe of the month </a></li>
                             </ul>
                         </div>
-                        <div class="col-sm-6 col-md-3 item">
-                            <h3>Meals</h3>
+                        <div class="col-sm-6 col-md-2 item">
+    
                             <ul>
-                                <li><a href="#">Company</a></li>
-                                <li><a href="#">Team</a></li>
-                                <li><a href="#">Careers</a></li>
+                                <li><a href="#">Regular</a></li>
+                                <li><a href="#">Lunch</a></li>
+                                <li><a href="#">Snacks</a></li>
+                                <li><a href="#">Dessert</a></li>
+                                <li><a href="#">Beverages</a></li>
                             </ul>
+                        </div>
+    
+                        <div class="col-sm-6 col-md-2 item">
+    
+                            <ul>
+                                <li><a href="#">Contact us</a></li>
+                                <li><a href="#">Feedback</a></li>
+    
+                            </ul>
+                        </div>
+                        <div class="col-md-6 item text">
+                            <h3>Vinegar Food Restaurant</h3>
+                            <p
+                                style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-size: 1.5rem;">
+                                Vinegar Food Restaurant is a registered brand of JADONS Ltd. <br>
+                                Business registration number: 2233445566 issued by the Ministry of Commerce <br>
+                                Headquarter office: 999 Pasteur Street, District 1, Ho Chi Minh City, Viet Nam. <br>
+                                Hotline: +84 1900 9999 - +84 1900 9898 <br>
+                            </p>
                         </div>
                         <div class="col item social"><a href="#"><i class="icon ion-social-facebook"></i></a><a
                                 href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i
                                     class="icon ion-social-snapchat"></i></a><a href="#"><i
                                     class="icon ion-social-instagram"></i></a></div>
                     </div>
-                    <p class="copyright">JADONS LTD © 2018</p>
+                    <p class="copyright">&copy 1990 - 2020 Vinegar Food Restaurant - All Rights Reserved.</p>
                 </div>
             </footer>
         </div>
 </body>
+
+<script>
+
+    function openModal() {
+        document.getElementById("myModal").style.display = "block";
+    }
+
+    function closeModal() {
+        document.getElementById("myModal").style.display = "none";
+    }
+
+    // Get the modal
+    var modal = document.getElementById("myModal");
+
+    // Get the image and insert it inside the modal - use its "alt" text as a caption
+    var img = document.getElementById("myImg");
+    var modalImg = document.getElementsById("mySlides");
+    img.onclick = function () {
+        modal.style.display = "block";
+        modalImg.src = this.src;
+        captionText.innerHTML = this.alt;
+    }
+
+    var slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("demo");
+        if (n > slides.length) { slideIndex = 1 }
+        if (n < 1) { slideIndex = slides.length }
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " active";
+    }
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close");
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function () {
+        modal.style.display = "none";
+    }
+</script>
 
 </html>
