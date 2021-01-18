@@ -13,37 +13,43 @@
 </head>
 <style>
     body {
-        font-family: Arial, Helvetica, sans-serif;
-        background-color: rgba(247, 247, 162, 0.774);
+        background-color: rgba(241, 225, 158, 0.589);
     }
 
-    .style_prevu_kit {
-        display: inline-block;
-        border: 0;
-        width: 200px;
-        height: 200px;
-        position: relative;
-        transition: all 200ms ease-in;
-        transform: scale(1);
-        margin-left: 3rem;
+    .card {
+        margin-left: 2rem;
+        width: 250px;
+        background-color: blanchedalmond;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
     }
 
-    .detail-content {
-        background-color: rgba(0, 0, 0, 0.3);
-        color: white;
-        position: absolute;
-        opacity: 1;
-        bottom: 0;
+    .image {
+        max-width: 100%;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
     }
 
-    .detail-content>h3 {
-        font-size: 1rem;
+    .card:hover,
+    .card:focus,
+    .card:active {
+        box-shadow: 1px 10px 10px -10px rgba(0, 0, 24, 0.5);
+        transform: scale(1.2);
     }
 
-    .style_prevu_kit:hover {
-        box-shadow: 0px 0px 5px #000000;
-        z-index: 2;
-        transform: scale(1.5);
+    .content {
+        padding: 9px 15px;
+    }
+
+    .capt {
+        padding: 0rem;
+        font-size: 1.5rem;
+    }
+
+    @keyframes shine {
+        to {
+            background-position-x: -200%;
+        }
     }
 </style>
 
@@ -87,8 +93,8 @@
                     <li><a href="Awards.html">AWARDS</a></li>
                     <li><a href="Vinegar_catering.html">CATERING</a></li>
                     <li><a href="Vinegar_recipe.html">RECIPE OF THE MONTH</a></li>
-                    <li><a href="mailto:abc@gmail.com">CONTACT US</a></li>
-                    <li><a href="#">FEEDBACK</a></li>
+                    <li><a href="Vinegar_contactus.html">CONTACT US</a></li>
+                    <li><a href="Vinegar_feedback.html">FEEDBACK</a></li>
                 </ul>
             </div><!-- /.navbar-collapse -->
         </nav>
@@ -100,38 +106,49 @@
         </div>
         <hr>
 
-        <div class="container" style="margin: 30rem;">
-            <div class="row">
-                <div class="col-sm-6 col-md-4 style_prevu_kit">
-                    <img id="myImg" src="images/awards1.jpg" alt="" style="width:100%">
-                    <div class="detail-content">
-                        <h3>THE WORLD'S 50 BEST RESTAURANT IN 2019</h3>
+        <div class="container">
+            <div class="row" style="margin-bottom: 4rem;">
+
+                <div class="col-sm-6 col-md-2 card">
+                    <div class="image">
+                        <img src="images/awards1.jpg" alt="" style="width: 100%;">
+                    </div>
+                    <div class="content">
+                        <h3 class="capt">THE WORLD'S 50 BEST RESTAURANT IN 2019</h3>
                     </div>
                 </div>
 
-                <div class="col-sm-6 col-md-4 style_prevu_kit">
-                    <img id="myImg" src="images/Goldmedal.png" alt="" style="width:100%">
-                    <div class="detail-content">
-                        <h3>GOLD MEDAL AWARDS IN 2018</h3>
+                <div class="col-sm-6 col-md-2 card">
+                    <div class="image">
+                        <img src="images/Goldmedal.png" alt="" style="width: 100%;">
+                    </div>
+                    <div class="content">
+                        <h3 class="capt">GOLD MEDAL AWARD IN 2018</h3>
                     </div>
                 </div>
 
-                <div class="col-sm-6 col-md-4 style_prevu_kit">
-                    <img id="myImg" src="images/award3.jpg" alt="" style="width:100%">
-                    <div class="detail-content">
-                        <h3>INTERNATIONAL HOTEL AWARD IN 2019</h3>
+                <div class="col-sm-6 col-md-2 card">
+                    <div class="image">
+                        <img src="images/award3.jpg" alt="" style="width: 100%;">
+                    </div>
+                    <div class="content">
+                        <h3 class="capt">INTERNATIONAL HOTEL AWARD IN 2019</h3>
                     </div>
                 </div>
 
-                <div class="col-sm-6 col-md-4 style_prevu_kit">
-                    <img id="myImg" src="images/luxuryAward.jpg" alt="" style="width:100%">
-                    <div class="detail-content">
-                        <h3>WORLD LUXURY RESTAURANT AWARD IN 2019</h3>
+                <div class="col-sm-6 col-md-2 card">
+                    <div class="image">
+                        <img src="images/luxuryAward.jpg" alt="" style="width: 100%;">
+                    </div>
+                    <div class="content">
+                        <h3 class="capt">WORLD LUXURY RESTAURANT IN 2019</h3>
                     </div>
                 </div>
+
             </div>
         </div>
     </div>
+
     <div class="footer-dark">
         <footer>
             <div class="container">
@@ -172,7 +189,7 @@
                             style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-size: 1.5rem;">
                             Vinegar Food Restaurant is a registered brand of JADONS Ltd. <br>
                             Business registration number: 2233445566 issued by the Ministry of Commerce <br>
-                            Headquarter office: 999 Pasteur Street, District 1, Ho Chi Minh City, Viet Nam. <br>
+                            Headquarter office: 90 Pasteur Street, District 1, Ho Chi Minh City, Viet Nam. <br>
                             Hotline: +84 1900 9999 - +84 1900 9898 <br>
                         </p>
                     </div>
@@ -186,61 +203,5 @@
         </footer>
     </div>
 </body>
-<script>
-
-    function openModal() {
-        document.getElementById("myModal").style.display = "block";
-    }
-
-    function closeModal() {
-        document.getElementById("myModal").style.display = "none";
-    }
-
-    // Get the modal
-    var modal = document.getElementById("myModal");
-
-    // Get the image and insert it inside the modal - use its "alt" text as a caption
-    var img = document.getElementById("myImg");
-    var modalImg = document.getElementsById("mySlides");
-    img.onclick = function () {
-        modal.style.display = "block";
-        modalImg.src = this.src;
-        captionText.innerHTML = this.alt;
-    }
-
-    var slideIndex = 1;
-    showSlides(slideIndex);
-
-    function plusSlides(n) {
-        showSlides(slideIndex += n);
-    }
-
-    function currentSlide(n) {
-        showSlides(slideIndex = n);
-    }
-
-    function showSlides(n) {
-        var i;
-        var slides = document.getElementsByClassName("mySlides");
-        var dots = document.getElementsByClassName("demo");
-        if (n > slides.length) { slideIndex = 1 }
-        if (n < 1) { slideIndex = slides.length }
-        for (i = 0; i < slides.length; i++) {
-            slides[i].style.display = "none";
-        }
-        for (i = 0; i < dots.length; i++) {
-            dots[i].className = dots[i].className.replace(" active", "");
-        }
-        slides[slideIndex - 1].style.display = "block";
-        dots[slideIndex - 1].className += " active";
-    }
-    // Get the <span> element that closes the modal
-    var span = document.getElementsByClassName("close");
-
-    // When the user clicks on <span> (x), close the modal
-    span.onclick = function () {
-        modal.style.display = "none";
-    }
-</script>
 
 </html>
