@@ -20,7 +20,7 @@ Project title: Vinegar Restaurant
 
 ============================
 
-eProject documentation at https://github.com/haruyuki7121994/rhythm.github.io/tree/master/documentation
+eProject documentation at https://github.com/ducnguyen028/Group4/tree/main/documentation
 
 ============================
 
